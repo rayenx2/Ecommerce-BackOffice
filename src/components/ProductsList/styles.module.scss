@@ -1,0 +1,94 @@
+.main {
+  display: flex;
+  position: relative;
+
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(196, 224, 255, 0.829);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+
+  .image {
+    width: 100px;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  }
+  .listItem {
+    list-style-type: none;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    button {
+      background: none;
+      border: none;
+      font-size: 20px;
+    }
+    button:hover {
+      cursor: pointer;
+      color: rgb(99, 137, 218);
+    }
+  }
+  form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(196, 224, 255);
+    border-radius: 10px;
+    height: 100%;
+    padding: 5px;
+
+    position: absolute;
+    left: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+    p {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    input {
+      background-color: rgb(232, 244, 255);
+      border-radius: 10px;
+      text-align: center;
+    }
+    button {
+      background: none;
+      border: none;
+      font-size: 18px;
+      padding-top: 20px;
+    }
+    button:hover {
+      cursor: pointer;
+      color: white;
+    }
+  }
+}
+
+.main:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    gap: 20px;
+    p {
+      display: none;
+    }
+    form {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      width: 100%;
+      top: 0;
+      input {
+        width: 70%;
+      }
+    }
+  }
+}

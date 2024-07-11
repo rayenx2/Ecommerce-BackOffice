@@ -1,0 +1,21 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  .addBtn {
+    background-color: rgb(179, 212, 255);
+    border: 1px solid rgb(179, 212, 255);
+    border-radius: 20px;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 900px) {
+    .addBtn {
+      left: 50%;
+      top: 14%;
+    }
+  }
+}

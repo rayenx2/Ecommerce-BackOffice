@@ -1,0 +1,26 @@
+@import "src/constants/variables.scss";
+.main {
+  width: 100%;
+  height: calc(100vh - $header-height);
+  background-color: rgb(238, 247, 255);
+  display: flex;
+  align-items: center;
+
+  .sxColumn {
+    width: 310px;
+    height: calc(100vh - $header-height);
+    padding: 20px;
+  }
+  .dxColumn {
+    width: 100%;
+    padding: 20px;
+    height: calc(100vh - $header-height);
+    background-color: rgb(238, 247, 255);
+  }
+
+  @media screen and (max-width: 400px) {
+    .sxColumn {
+      padding: 0;
+    }
+  }
+}

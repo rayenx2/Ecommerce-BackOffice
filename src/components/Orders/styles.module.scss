@@ -1,0 +1,66 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(196, 224, 255, 0.829);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+  margin: 10px 0;
+
+  .orderItem {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+      rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .listItem {
+    list-style-type: none;
+    margin: 5px 0;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
+    button {
+      background: none;
+      border: none;
+      font-size: 20px;
+      color: #3a3a3a;
+
+      &:hover {
+        cursor: pointer;
+        color: rgb(99, 137, 218);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main {
+    flex-direction: column;
+    gap: 20px;
+
+    .orderItem {
+      width: 100%;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
