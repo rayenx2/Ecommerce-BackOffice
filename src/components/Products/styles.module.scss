@@ -1,0 +1,23 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .refresh {
+    background: none;
+    border: none;
+    font-size: 26px;
+  }
+  .refresh:hover {
+    cursor: pointer;
+  }
+  .container {
+    max-height: 100vh;
+    
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+  }
+}
