@@ -1,7 +1,7 @@
 // index.jsx (or your React component)
-import { useState , useContext  } from "react";
+import { useState , useContext , useEffect } from "react";
 import styles from "./styles.module.scss";
-import { updateProduct } from '../../api/api'; // Adjust import path as needed
+import { updateProduct , findAllCategories} from '../../api/api'; // Adjust import path as needed
 import { MdCreate, MdDeleteSweep, MdOutlineDoneOutline } from "react-icons/md";
 import { CategoryContext } from "../context/CategoryContext";
 
@@ -53,6 +53,19 @@ const ProductsList = ({ item, deleteElement, reloadItems }) => {
       // Handle error state or notify user
     }
   };
+
+  useEffect(() => {
+    if (showForm) {
+      findAllCategories()
+        .then((data) => {
+          setCategory(data);
+        })
+        .catch((error) => {
+          console.error('Error fetching categories:', error);
+        });
+    }
+  }, [showForm, setCategory]);
+  
 
   return (
     <div className={styles.main}>

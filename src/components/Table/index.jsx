@@ -7,9 +7,7 @@ const Table = ({ categoriesState, getData, loading }) => {
   return (
     <div className={styles.main}>
       <div className={styles.head}>
-        <button className={styles.refreshBtn} onClick={() => getData()}>
-          <MdReplay />
-        </button>
+        
       </div>
       {loading ? (
         "loading..."

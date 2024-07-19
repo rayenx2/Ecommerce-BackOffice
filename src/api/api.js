@@ -181,3 +181,33 @@ export const getCategoriesOrderedByMostSold = async () => {
     throw error;
   }
 };
+
+export const deleteOrder = async (orderId) => {
+  try {
+    const response = await axiosClient.delete(`/orders/${orderId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error deleting order with ID ${orderId}:`, error);
+    throw new Error('Failed to delete order. Please try again later.');
+  }
+};
+
+export const updateOrderStatus = async (orderId, updatedStatus) => {
+  console.log(updatedStatus);
+  try {
+    console.log(orderId, updatedStatus);
+    const response = await axiosClient.patch(`/orders/${orderId}/status`, {
+      status: updatedStatus,
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+    console.log(response);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating order with ID ${orderId}:`, error);
+    throw error;
+  }
+};
