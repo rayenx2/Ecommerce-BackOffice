@@ -211,3 +211,112 @@ export const updateOrderStatus = async (orderId, updatedStatus) => {
     throw error;
   }
 };
+
+
+// export const getProductByPrice = async (pricePrefix) => {
+//   try {
+//     // Convert the pricePrefix to a number, if it's not already
+//     const numericPrefix = Number(pricePrefix);
+    
+//     if (isNaN(numericPrefix)) {
+//       throw new Error('Invalid price prefix');
+//     }
+    
+//     // Make the API request with the numericPrefix
+//     const response = await axiosClient.get(`/products/price/${numericPrefix}`);
+//     return response.data;
+//   } catch (error) {
+//     console.error(`Error fetching products by price prefix ${pricePrefix}:`, error);
+//     throw error;
+//   }
+// };
+
+
+
+export const getProductByPrice = async (price) => {
+  try {
+    const response = await axiosClient.get(`/products/price/${price}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching products by price ${price}:`, error);
+    throw error;
+  }
+};
+
+export const getProductByTitle = async (title) => {
+  try {
+    const response = await axiosClient.get(`/products/title/${title}`);
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching products by title "${title}":`, error);
+    throw error;
+  }
+};
+
+export const getProductByCategory = async (categoryId) => {
+  try {
+    const response = await axiosClient.get(`/products/category/${categoryId}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching products by category ID ${categoryId}:`, error);
+    throw error;
+  }
+};
+
+
+
+export const getOrdersByUserName = async (userName) => {
+  try {
+    const response = await axiosClient.get(`/orders/user/${userName}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching orders by user name "${userName}":`, error);
+    throw error;
+  }
+};
+
+export const getOrdersByAmount = async (amount) => {
+  try {
+    const response = await axiosClient.get(`/orders/amount/${amount}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching orders by amount ${amount}:`, error);
+    throw error;
+  }
+};
+
+export const getOrdersByStatus = async (status) => {
+  try {
+    const response = await axiosClient.get(`/orders/status/${status}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching orders by status "${status}":`, error);
+    throw error;
+  }
+};
+
+export const getCategoryByName= async (name) => {
+
+  try {
+    const response = await axiosClient.get(`/categories/name/${name}`);
+    return response.data;
+    
+  } catch (error) {
+    console.error(`Error fetching category by name "${name}":`, error);
+    throw error;
+    
+  }
+}
+
+
+export const checkCategoryUnused = async (categoryId) => {
+  try {
+    const response = await axiosClient.get(`/products/category/${categoryId}/check-unused`);
+    return response.data.unused;
+  } catch (error) {
+    console.error('Error checking if category is unused:', error);
+    throw new Error('Failed to check category. Please try again later.');
+  }
+};

@@ -1,0 +1,9 @@
+.chartContainer {
+    display: flex;
+    gap: 20px; /* Add space between the charts */
+  }
+  
+  .chartContainer > div {
+    flex: 1; /* Make each chart take equal space */
+  }
+  
